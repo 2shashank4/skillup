@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillUp Academy - English & Computer Classes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Free English speaking and basic computer classes with live sessions and affordable certificates for students."
+  />
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #fbbf24;
+      --bg: #f3f4f6;
+      --text: #111827;
+      --muted: #6b7280;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER / NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-nav {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .btn-nav:hover {
+      background: var(--primary-dark);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      padding-top: 2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: 2.15rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      padding: 0.7rem 1.1rem;
+      font-size: 0.9rem;
+      background: white;
+      color: #374151;
+    }
+
+    .hero-mini {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    .hero-stats div span {
+      display: block;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+    }
+
+    .hero-visual {
+      background: radial-gradient(circle at top, #dbeafe, #eff6ff);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.12);
+    }
+
+    .hero-visual-inner {
+      border-radius: 1rem;
+      border: 1px dashed #bfdbfe;
+      padding: 1.25rem;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-visual h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: #374151;
+    }
+
+    .hero-list li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    /* SECTIONS */
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* TRUST STRIP */
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .trust-item {
+      background: #e5e7eb;
+      border-radius: 999px;
+      padding: 0.5rem 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      color: #374151;
+    }
+
+    .trust-badge {
+      font-size: 0.65rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 999px;
+      background: #4ade80;
+      color: #064e3b;
+      font-weight: 600;
+    }
+
+    /* COURSES */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      background: #d1fae5;
+      color: #047857;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .card ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: #374151;
+      margin-bottom: 0.9rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    .card ul li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    .card-footer {
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+    }
+
+    /* HOW IT WORKS */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: 0.9rem;
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .step-number {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .step h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .step p {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    /* SCHEDULE */
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      background: var(--white);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 0.7rem 0.9rem;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    .schedule-table th {
+      background: #eff6ff;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #1f2937;
+    }
+
+    .badge-mode {
+      font-size: 0.72rem;
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      background: #d1fae5;
+      color: #047857;
+    }
+
+    .btn-small {
+      font-size: 0.78rem;
+      border-radius: 999px;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+    }
+
+    /* CERTIFICATES */
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .cert-card {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .cert-card h3 {
+      margin-bottom: 0.4rem;
+    }
+
+    .cert-card p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .cert-card strong {
+      color: var(--primary-dark);
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 1.5rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 0.9rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 0.7rem;
+      font-size: 0.87rem;
+    }
+
+    .faq-item h3 {
+      font-size: 0.94rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    form {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      font-size: 0.88rem;
+    }
+
+    .form-row {
+      margin-bottom: 0.75rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.15rem;
+      color: #374151;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.5rem 0.55rem;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      font-size: 0.85rem;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 1.5rem 1.25rem;
+      background: #111827;
+      color: #9ca3af;
+      font-size: 0.82rem;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .trust-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cards,
+      .steps,
+      .cert-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        top: 3.3rem;
+        right: 1.25rem;
+        background: white;
+        border-radius: 0.75rem;
+        padding: 0.75rem 1rem;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 190px;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .trust-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        Skill<span>Up</span> Academy
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#live">Live Classes</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+<div class="offer-banner">
+  <div class="offer-text">
+    🎉 LIMITED OFFER: Lifetime Membership for 1st 50 Users – Only ₹199!  |  Hurry Up!  |  Join Now! 🎉
+  </div>
+</div>
+
+<style>
+.offer-banner {
+  background: #2563eb;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.offer-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 24s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+  <!-- HERO -->
+  <main id="home" class="section">
+    <div class="hero">
+      <div>
+        
+        <h1>
+          Learn <span>English Speaking</span> & Basic Computer Skills Online.
+        </h1>
+        <p>
+          Join live Google Meet / Zoom classes designed for school and college
+          students. Free learning, affordable certificates, and practical
+          skills for real life.
+        </p>
+
+        <div class="hero-actions" id="join">
+          <!-- TODO: Replace href below with your Google Form / enrollment link -->
+          <a
+            href="https://forms.gle/Z9PJZjgG9wZv1d3b6"
+            target="_blank"
+            class="btn-primary"
+          >
+            Join Free Batch →
+          </a>
+          <a href="https://forms.gle/Z9PJZjgG9wZv1d3b6" class="btn-outline">
+            View Live Class Schedule
+          </a>
+        </div>
+
+        <p class="hero-mini">
+          No prior experience needed. Learn in simple English & Hindi.
+        </p>
+
+        <div class="hero-stats">
+          <div>
+            <span>30+ Days</span>
+            English Speaking Program
+          </div>
+          <div>
+            <span>4 Weeks</span>
+            Basic Computer Course
+          </div>
+        </div>
+
+        <div class="trust-strip">
+          <div class="trust-item">
+            <span class="trust-badge">Free</span> Lifetime Live classes
+          </div>
+          <div class="trust-item">
+            ✔ Beginner friendly
+          </div>
+          <div class="trust-item">
+            ✔ WhatsApp support
+          </div>
+          <div class="trust-item">
+            ✔ Digital certificate
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-visual">
+        <div class="hero-visual-inner">
+          <h2>Today’s Learning Snapshot</h2>
+          <ul class="hero-list">
+            <li><span class="dot"></span> English: Daily Conversation Practice</li>
+            <li><span class="dot"></span> Computer: Creating a Resume in Word</li>
+            <li><span class="dot"></span> Live Q&A at the end of each session</li>
+          </ul>
+          <p
+            style="
+              font-size: 0.8rem;
+              color: #6b7280;
+              margin-top: 0.7rem;
+            "
+          >
+            Attend from your mobile or laptop. Recordings available after class.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- COURSES -->
+  <section id="courses" class="section">
+    <h2 class="section-title">Our Courses</h2>
+    <p class="section-subtitle">
+      Start with any program and join our live sessions from home.
+    </p>
+
+    <div class="cards">
+      <!-- English Course -->
+      <article class="card">
+        <div class="card-tag">Spoken English • Beginner–Intermediate</div>
+        <h3>Spoken English for Students</h3>
+        <p>
+          Build confidence to speak English in school, college, interviews, and
+          daily life.
+        </p>
+        <ul>
+          <li>Grammar for speaking (not boring rules)</li>
+          <li>Daily conversation practice & role-plays</li>
+          <li>Public speaking & interview basics</li>
+        </ul>
+        <div class="card-footer">
+          <span>Duration: 30 Days • 3 classes/week</span>
+          <a href="https://forms.gle/Z9PJZjgG9wZv1d3b6" class="btn-small">Enroll for Free</a>
+        </div>
+      </article>
+
+      <!-- Computer Course -->
+      <article class="card">
+        <div class="card-tag">Basic Computer • Job Skills</div>
+        <h3>Basic Computer & MS Office</h3>
+        <p>
+          Learn the computer skills every student and fresher should know for
+          studies and jobs.
+        </p>
+        <ul>
+          <li>Windows, files & folders management</li>
+          <li>MS Word, Excel & PowerPoint basics</li>
+          <li>Email, internet & online safety</li>
+        </ul>
+        <div class="card-footer">
+          <span>Duration: 4 Weeks • 3 classes/week</span>
+          <a href="https://forms.gle/Z9PJZjgG9wZv1d3b6" class="btn-small">Enroll for Free</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <h2 class="section-title">How Learning Works</h2>
+    <p class="section-subtitle">
+      Simple 3 step process to start learning and get certified.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Enroll for Free</h3>
+        <p>
+          Fill the online form, choose your course, and join our WhatsApp
+          student group.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Attend Live Classes</h3>
+        <p>
+          Join live Zoom/Google Meet classes from your phone or laptop and ask
+          doubts directly.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Complete & Get Certificate</h3>
+        <p>
+          Finish assignments and tests, then purchase your digital certificate
+          at a low fee.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE CLASSES -->
+  <section id="live" class="section">
+    <h2 class="section-title">Live Class Schedule</h2>
+    <p class="section-subtitle">
+      Example schedule – you can update this table anytime in the code.
+    </p>
+
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Course</th>
+          <th>Mode</th>
+          <th>Join</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>07-12-2015</td>
+          <td>5:00 PM – 6:00 PM</td>
+          <td>Spoken English – Beginner Batch</td>
+          <td><span class="badge-mode">Google Meet</span></td>
+          <td>
+            <!-- TODO: Replace # with your meeting link or student dashboard -->
+            <a href="#" class="btn-small">Join</a>
+          </td>
+        </tr>
+        <tr>
+          <td>07-12-2025</td>
+          <td>7:00 PM – 8:00 PM</td>
+          <td>Basic Computer – Level 1</td>
+          <td><span class="badge-mode">Zoom</span></td>
+          <td><a href="#" class="btn-small">Join</a></td>
+        </tr>
+        <tr>
+          <td>08-12-2025</td>
+          <td>5:00 PM – 6:00 PM</td>
+          <td>Spoken English – Practice Session</td>
+          <td><span class="badge-mode">Google Meet</span></td>
+          <td><a href="#" class="btn-small">Join</a></td>
+        </tr>
+        <tr>
+          <td>08-12-2025</td>
+          <td>7:00 PM – 8:00 PM</td>
+          <td>Basic Computer – MS Word</td>
+          <td><span class="badge-mode">Zoom</span></td>
+          <td><a href="#" class="btn-small">Join</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="section">
+    <h2 class="section-title">Certificates & Fees</h2>
+    <p class="section-subtitle">
+      Classes and learning are free. Certificates are optional and affordable.
+    </p>
+
+    <div class="cert-grid">
+      <article class="cert-card">
+        <h3>Spoken English Certificate</h3>
+        <p>
+          Get a <strong>Certificate of Completion</strong> for the Spoken
+          English program with your name and course details.
+        </p>
+        <p>
+          Requirements: 75% attendance + final test completion.
+        </p>
+        <p><strong>Suggested Fee:</strong> ₹149</p>
+        <!-- TODO: Replace href with your Razorpay payment link -->
+        <a
+          href="https://rzp.io/rzp/pDhiKDly"
+          target="_blank"
+          class="btn-primary"
+          style="font-size: 0.8rem; margin-top: 0.3rem; display: inline-block;"
+        >
+          Apply for English Certificate
+        </a>
+      </article>
+
+      <article class="cert-card">
+        <h3>Basic Computer Certificate</h3>
+        <p>
+          Get a <strong>Certificate of Completion</strong> for the Basic
+          Computer & MS Office course, great for resumes and job applications.
+        </p>
+        <p>
+          Requirements: Complete all modules + final assignment.
+        </p>
+        <p><strong>Suggested Fee:</strong> ₹199</p>
+        <!-- TODO: Replace href with your Razorpay payment link -->
+        <a
+          href="https://rzp.io/rzp/c4dQ6yiL"
+          target="_blank"
+          class="btn-primary"
+          style="font-size: 0.8rem; margin-top: 0.3rem; display: inline-block;"
+        >
+          Apply for Computer Certificate
+        </a>
+      </article>
+    </div>
+
+    <p
+      style="
+        font-size: 0.8rem;
+        color: #6b7280;
+        margin-top: 0.9rem;
+        text-align: center;
+      "
+    >
+      After payment, certificates can be sent to students via email or WhatsApp.
+    </p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title">About SkillUp Academy</h2>
+    <p class="section-subtitle">
+      You can edit this text to tell your real story and mission.
+    </p>
+
+    <div
+      style="
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 0.9rem;
+        color: #374151;
+        background: #f9fafb;
+        border-radius: 1rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #e5e7eb;
+      "
+    >
+      <p style="margin-bottom: 0.6rem;">
+        SkillUp Academy was started with a simple goal – to help students
+        and freshers improve their English and basic computer skills without
+        paying high coaching fees.
+      </p>
+      <p style="margin-bottom: 0.6rem;">
+        We focus on practical, simple teaching in a mix of Hindi and English so
+        that even complete beginners can follow along. Our live classes are
+        interactive, friendly, and designed to build confidence.
+      </p>
+      <p>
+        Our mission is to make essential skills accessible for every student,
+        whether they are from a big city or a small town.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Are the classes really free?</h3>
+        <p>
+          Yes. All live classes, recordings, and study material are free. Only
+          the digital certificates are paid and completely optional.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>What do I need to join the classes?</h3>
+        <p>
+          A mobile or laptop with internet. No prior computer or English
+          knowledge is required. You should understand basic Hindi/English.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Are the courses suitable for beginners?</h3>
+        <p>
+          Yes. We start from very basic level for both English speaking and
+          computer skills and slowly move forward.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I get my certificate?</h3>
+        <p>
+          Complete the course, pass the final test, then pay the certificate fee
+          online through our payment link. The certificate will be sent to you
+          by email or WhatsApp.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">
+      Have any questions? Send us a message or connect on WhatsApp.
+    </p>   
+
+      <div style="
+    max-width: 520px; 
+    margin: 40px auto; 
+    background: #ffffff; 
+    padding: 25px 20px; 
+    border-radius: 14px; 
+    border: 1px solid #e5e7eb; 
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+">
+    
+  <div style="font-size: 1rem; line-height: 1.8; color:#374151;">
+      <p><strong>📱 WhatsApp:</strong> +91-790-507-8364</p>
+      <p><strong>📧 Email:</strong> support@speakupacademy.com</p>
+      <p><strong>⏰ Timings:</strong> 4 PM – 9 PM (Mon–Sat)</p>
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p>
+        © <span id="year"></span> SkillUp Academy. All rights reserved.
+      </p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#live">Schedule</a>
+        <a href="#certificates">Certificates</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Close nav on link click (mobile)
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+
+    // Set current year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
